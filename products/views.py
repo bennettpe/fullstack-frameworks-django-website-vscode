@@ -7,8 +7,8 @@ from django.contrib import messages
 
 import json
 
-#RATE PRODUCT 
-@login_required   
+#RATE PRODUCT
+@login_required  
 def ratings(request):
     if request.method == 'POST':
         success = False
@@ -61,7 +61,7 @@ def products(request):
 #ALTERNATOR & DYNAMO
 def alt_dyno(request):
     return render(request, 'alt_dyno.html', 
-    {'products_list': Product.objects.filter(category='alt_dyno').order_by('part_name','part_number')}) 
+    {'products_list': Product.objects.filter(category='alt_dyno').order_by('part_name','part_number')})
 
 #BODY
 def body(request):
@@ -140,7 +140,7 @@ def drive_line(request):
 
 #ENGINE
 def engine(request):
-    return render(request, 'engine.html', 
+    return render(request, 'engine.html',
     {'products_list': Product.objects.filter(category='engine').order_by('part_name','part_number')})
 
 #ELECTRICAL

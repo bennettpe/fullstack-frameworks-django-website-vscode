@@ -20,7 +20,6 @@ import dj_database_url
 if os.path.exists('env.py'):
     import env
 
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -28,15 +27,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 # A secret key for a particular Django installation
 SECRET_KEY = os.environ.get('SECRET_KEY')
-
-
-# SECURITY WARNING: don't run with debug turned on in production!
-# A boolean that turns on/off debug mode
-# Used locally and not in Heroku
-if os.path.exists('env.py'):
-    DEBUG = True
-else:  
-    DEBUG = False
 
 
 # A list of strings representing the host/domain names that this Django site can serve
@@ -165,46 +155,53 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 #-----------------------------------------------------------
-# AWS_DEFAULT_ACL = To stop UserWarning message
+# AWS_DEFAULT_ACL          = To stop UserWarning message
 # AWS_S3_OBJECT_PARAMETERS = set object parameters on your object
-# AWS_STORAGE_BUCKET_NAME = Your Amazon Web Services storage bucket name
-# AWS_ACCESS_KEY_ID = Your Amazon Web Services access key
-# AWS_SECRET_ACCESS_KEY = Your Amazon Web Services secret access key
-# AWS_S3_CUSTOM_DOMAIN =
-AWS_S3_OBJECT_PARAMETERS = {
-    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-    'CacheControl': 'max-age=94608000',
-}
-AWS_DEFAULT_ACL = 'public-read'
-AWS_STORAGE_BUCKET_NAME = "pauls-fullstack-frameworks-django-project"
-AWS_S3_REGION_NAME = "eu-west-1"
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
+# AWS_STORAGE_BUCKET_NAME  = Your Amazon Web Services storage bucket name
+# AWS_ACCESS_KEY_ID        = Your Amazon Web Services access key
+# AWS_SECRET_ACCESS_KEY    = Your Amazon Web Services secret access key
+# AWS_S3_CUSTOM_DOMAIN     =
+# STATIC_ROOT              = Absolute Path to the directory where collectstatic will collect static files for deployment
+# STATIC_URL               = URL to use when referring to static files located in STATIC ROOT
+# STATICFILES_DIRS         = Look for static files here
+# STATICFILES_STORAGE      = The file storage engine to use when collecting static files with the collectstatic management command.
+# MEDIA_URL                = URL that handles media servered from MEDIA_ROOT
+# MEDIA_ROOT               = Absolute Path to the directory that will hold user-upload files
 
-# Static files
-#-----------------------------------------------------------
-# STATIC_ROOT     = Absolute Path to the directory where collectstatic will collect static files for deployment
-# STATIC_URL      = URL to use when referring to static files located in STATIC ROOT
-# STATICFILES_DIRS = # Look for static files here
-# STATICFILES_STORAGE = The file storage engine to use when collecting static files with the collectstatic management command.
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')    
-#STATIC_URL = '/static/'  
-STATICFILES_LOCATION = 'static'
-STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+## If ENV.PY exist use Local Static Files
+if os.path.isfile('env.py'):
+    print("Using Local Static Files")
+    DEBUG = True
+    STATIC_URL = '/static/'
+    MEDIA_URL = '/media/' 
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+## If ENV.PY does not exist use AWS S3 Files
+else:
+    print("Using AWS S3 Files")
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = False
+
+    # aws settings
+    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+    AWS_STORAGE_BUCKET_NAME = "pauls-fullstack-frameworks-django-project"
+    AWS_DEFAULT_ACL = 'public-read'
+    AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
+    AWS_S3_REGION_NAME = "eu-west-1"
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+    # s3 static file settings
+    STATICFILES_LOCATION = 'static'
+    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+    STATICFILES_STORAGE = "custom_storages.StaticStorage"
+    MEDIAFILES_LOCATION = 'media'
+    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+   
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-STATICFILES_STORAGE = "custom_storages.StaticStorage"
-
-# Media files
-#-----------------------------------------------------------
-# MEDIA_URL  = URL that handles media servered from MEDIA_ROOT
-# MEDIA_ROOT = Absolute Path to the directory that will hold user-upload files
-# Comment out for media hosting in production
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
-MEDIAFILES_LOCATION = 'media'
-#MEDIA_URL = '/media/'  
-MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Controls where Django stores message data
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
