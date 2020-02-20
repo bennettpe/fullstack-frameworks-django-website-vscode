@@ -3,6 +3,7 @@
 env.py
 *.png
 db.json
+venv-requirements.txt
 
 # Created by https://www.gitignore.io/api/python,django,virtualenv,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=python,django,virtualenv,visualstudiocode
