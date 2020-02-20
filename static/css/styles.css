@@ -75,8 +75,6 @@ p.card-footer {
 }
 
 
-
-
 /* ----- Changes to Nav Bar ----- */
 /*text colour for the link on the navbar */
 .navbar .nav-link, 
@@ -127,7 +125,6 @@ p.card-footer {
 } 
 
 
-
 /* ----- Changes to Messages ------- */
 .alert {
     border-color: #9b9797;
@@ -145,7 +142,6 @@ p.card-footer {
 .alert-danger {
     background-color: #ee6c4d;
 }
-
 
 
 /* ----- Changes to Breadcrumb ----- */
@@ -180,7 +176,6 @@ p.card-footer {
 .breadcrumb-item.active {
     color: #ee6c4d;
 }
-
 
 
 /* ----- Changes to Header ----- */
@@ -251,6 +246,7 @@ p.card-footer {
   overflow: auto;
 }
 
+
 /* ----- Changes to Buttons ----- */
 /* ADD radius to buttons */
 
@@ -309,7 +305,6 @@ p.card-footer {
 }
 
 
-
 /* ----- Changes to Models Section ----- */
 /* Change font size of h2 */
 .model-header {
@@ -343,7 +338,6 @@ p.card-footer {
 .product-image {
     border: 1px solid #000;
 }
-
 
 
 /* ----- Changes to Cards ----- */
@@ -417,13 +411,23 @@ p.card-footer {
   padding: 0;
 }
 
-/* Add border to parts diagram */
-.parts-diagram {
-    border: 1px solid #9b9797;
-    border-radius: 10px;  
+/* Add align to parts container */
+.parts-container {
+  text-align: center;
+  /*align-items: center;*/
+  justify-content: center;
 }
 
+/* CHANGE font size for parts title */
+.parts-diagram-title {
+  color: #ee6c4d; 
+  font-size: 1.75em;
+}
 
+/* Add border to parts diagram */
+.parts-diagram {
+    border-radius: 10px; 
+}
 
 
 /* ----- Changes to cart.html ----- */
@@ -449,7 +453,6 @@ p.card-text {
 .basket-msg {
      color: #b22222;  /*firebrick*/ 
 }
-
 
 
 /* ----- Changes to Back To Top Button ----- */
@@ -481,7 +484,6 @@ p.card-text {
 .bttop i:hover {
     color: #fff;
 }
-
 
 
 /* ----- Changes to Footer ----- */
@@ -551,7 +553,6 @@ fieldset {
 }
 
 
-
 /* ----- Changes to contact.html ----- */
 /* Change colour to  messages */
 .error-msg {
@@ -578,6 +579,7 @@ fieldset {
   border-bottom-left-radius: 10px;
 }
 
+
 /* ----- Changes to about.html ----- */
 /* Change font-size to heading */
 .about-heading {
@@ -588,6 +590,7 @@ fieldset {
 .center {
     padding: 10% 0;
 }
+
 
 /* ----- Changes to form error messages ----- */
 /* Add new line after each message */
