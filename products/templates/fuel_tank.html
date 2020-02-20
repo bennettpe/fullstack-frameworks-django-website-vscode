@@ -10,27 +10,17 @@
         <li class="breadcrumb-item"> <a href="{% url 'fuel' %}"> Carburettors </a></li>
         <li class="breadcrumb-item"> <a href="{% url 'fuel_pipes' %}"> Fuel Pipes </a></li>
         <li class="breadcrumb-item active">Fuel Tank and pump </li>
-       
     </ol>
 
     <!-- Parts Heading -->
     <h2 class="pl-4 pr-4"> Fuel tank & pump </h2>
     </br>
 
-    <!-- Parts Diagram(s) -->
-    <div class="row  pl-4 pr-4 justify-content-center text-center">
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/fuel/Fuel tank MK3 - from January 1967 to November 1970.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Fuel tank Mk3 </h2>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/fuel/Fuel tank MK4 and 1500 - from November 1970.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Fuel tank Mk4 & 1500 </h2>
-        </div>
-        <div class="col-md-6 col-sm-6 mt-4">
-            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/fuel/Fuel pump.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Fuel pump </h2>
-        </div>
+    <!-- Parts Diagram Cards -->
+    <div class="row parts-container pl-4 pr-4">
+        {% include 'parts_diagram.html' with gif="img/fuel/Fuel tank MK3 - from January 1967 to November 1970.gif" title="Fuel tank Mk3" description="European specification to chassis no FD92803" %}
+        {% include 'parts_diagram.html' with gif="img/fuel/Fuel tank MK4 and 1500 - from November 1970.gif" title="Fuel tank Mk4 & 1500" description="European specification from chassis no FH3" %}
+        {% include 'parts_diagram.html' with gif="img/fuel/Fuel pump.gif" title="Fuel pump" %}
     </div>
 
     <!-- Parts Cards -->

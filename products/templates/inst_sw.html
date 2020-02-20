@@ -21,37 +21,20 @@
     <h2 class="pl-4 pr-4"> Instruments & switches </h2>
     <br>
 
-    <!-- Parts Diagram(s) -->
-    <div class="row  pl-4 pr-4 justify-content-center text-center">
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/electrical/Instruments - MK3.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Instruments - Mk3 </h2>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <img class="img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/electrical/Switches and steering lock - MK3.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Switches - Mk3 </h2>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram mt-4" data-toggle="magnify" src="{% static 'img/electrical/Instruments - MK4.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Instruments - Mk4 </h2>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram mt-4" data-toggle="magnify" src="{% static 'img/electrical/Switches and steering lock - MK4, 1500 to March 1977.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Switches - Mk4 </h2>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram mt-4" data-toggle="magnify" src="{% static 'img/electrical/Instruments - 1500.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Instruments - 1500 </h2>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <img class="img-fluid parts-diagram mt-4" data-toggle="magnify" src="{% static 'img/electrical/Switches and steering lock - 1500 from March 1977.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Switches - 1500 </h2>
-        </div>
+    <!-- Parts Diagram Cards -->
+    <div class="row parts-container pl-4 pr-4">
+        {% include 'parts_diagram.html' with gif="img/electrical/Instruments - MK3.gif" title="Instruments - Mk3" description="European models to chassis no. FD92803" %}
+        {% include 'parts_diagram.html' with gif="img/electrical/Switches and steering lock - MK3.gif" title="Switches - Mk3" description="European models to chassis no. FD92803" %}
+        {% include 'parts_diagram.html' with gif="img/electrical/Instruments - MK4.gif" title="Instruments - Mk4" description="European models from chassis no. FH3 to FH64995" %}
+        {% include 'parts_diagram.html' with gif="img/electrical/Switches and steering lock - MK4, 1500 to March 1977.gif" title="Switches - Mk4" description="European models to chassis no. FH100020" %}
+        {% include 'parts_diagram.html' with gif="img/electrical/Instruments - 1500.gif" title="Instruments - 1500" description="european models from chassis no. FH75001" %}
+        {% include 'parts_diagram.html' with gif="img/electrical/Switches and steering lock - 1500 from March 1977.gif" title="Switches - 1500" description="European models from chassis no. FH100020" %}
     </div>
+
     <!-- Parts Cards -->
     {% include 'parts_cards.html' %}
 </div>
 
-<!-- BACK TO TOP -->
-{% include 'bttop.html' %} 
+    <!-- BACK TO TOP -->
+    {% include 'bttop.html' %} 
 {% endblock %}

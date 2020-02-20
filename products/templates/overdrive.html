@@ -20,22 +20,16 @@
     <p class="pl-4 pr-4"> To chassis no. FH60000 & FM10000 (January 1967 to August 1973) </p>
     </br>
 
-    <!-- Parts Diagram(s) -->
-    <div class="row  pl-4 pr-4 text-center">
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/overdrive/D type overdrive, inner Spitfire Mk3 and early Mk4.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Overdrive inner 'D' type </h2>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <img class="img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/overdrive/D type overdrive, outer- Spitfire Mk3 and early Mk4.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Overdrive outer'D' type </h2>
-        </div>
+    <!-- Parts Diagram Cards -->
+    <div class="row parts-container pl-4 pr-4">
+        {% include 'parts_diagram.html' with gif="img/overdrive/D type overdrive, inner Spitfire Mk3 and early Mk4.gif"  title="Overdrive inner 'D' type" %}
+        {% include 'parts_diagram.html' with gif="img/overdrive/D type overdrive, outer Spitfire Mk3 and early Mk4.gif" title="Overdrive outer'D' type" %}
     </div>
 
     <!-- Parts Cards -->
     {% include 'parts_cards.html' %}
 </div>
 
-<!-- BACK TO TOP -->
-{% include 'bttop.html' %} 
+    <!-- BACK TO TOP -->
+    {% include 'bttop.html' %} 
 {% endblock %}

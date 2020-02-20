@@ -14,16 +14,10 @@
     <h2 class="pl-4 pr-4"> Roadwheels </h2>
     </br>
 
-    <!-- Parts Diagram(s) -->
-    <div class="row  pl-4 pr-4 justify-content-center text-center">
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/roadwheels/Jack and tools.gif' %}" alt="scparts">
-            <h2 class="mb-2">Jack & tools </h2>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/roadwheels/Wheels.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Wheels </h2>
-        </div>
+    <!-- Parts Diagram Cards -->
+    <div class="row parts-container pl-4 pr-4">
+        {% include 'parts_diagram.html' with gif="img/roadwheels/Jack and tools.gif"  title="Jack & tools " %}
+        {% include 'parts_diagram.html' with gif="img/roadwheels/Wheels.gif" title="Wheels" %}
     </div>
 
     <!-- Parts Cards -->

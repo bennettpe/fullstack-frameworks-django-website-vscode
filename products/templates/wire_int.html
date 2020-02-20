@@ -21,22 +21,16 @@
     <h2 class="pl-4 pr-4"> Wiring & relays </h2>
     </br>
 
-    <!-- Parts Diagram(s) -->
-    <div class="row pl-4 pr-4 justify-content-center text-center">
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/electrical/Wiring loom.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Wiring loom </h2>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/electrical/Internal electrics - fues box, horn, relays and switches.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Internal electrics </h2>
-        </div>
+    <!-- Parts Diagram Cards -->
+    <div class="row parts-container pl-4 pr-4">
+        {% include 'parts_diagram.html' with gif="img/electrical/Wiring loom.gif"  title="Wiring loom" %}
+        {% include 'parts_diagram.html' with gif="img/electrical/Internal electrics - fues box, horn, relays and switches.gif" title="Internal electrics" %}
     </div>
     
     <!-- Parts Cards -->
     {% include 'parts_cards.html' %}
 </div>
 
-<!-- BACK TO TOP -->
-{% include 'bttop.html' %} 
+    <!-- BACK TO TOP -->
+    {% include 'bttop.html' %} 
 {% endblock %}

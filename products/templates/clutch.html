@@ -18,22 +18,16 @@
     <h2 class="pl-4 pr-4"> Clutch </h2>
     <br>
 
-    <!-- Parts Diagram(s) -->
-    <div class="row  pl-4 pr-4 justify-content-center text-center">
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/clutch/clutch.gif' %}" alt="scparts">
-            <h2 class="mt-2"> Clutch </h2>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <img class="img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/clutch/clutch_hydraulics.gif' %}" alt="scparts">
-            <h2 class="mt-2"> Clutch hydraulics </h2>
-        </div>
+    <!-- Parts Diagram Cards -->
+    <div class="row parts-container pl-4 pr-4">
+        {% include 'parts_diagram.html' with gif="img/clutch/clutch.gif" title="Clutch" %}
+        {% include 'parts_diagram.html' with gif="img/clutch/clutch_hydraulics.gif" title="Clutch hydraulics" %}
     </div>
 
     <!-- Parts Cards -->
     {% include 'parts_cards.html' %}
 </div>
 
-<!-- BACK TO TOP -->
-{% include 'bttop.html' %} 
+    <!-- BACK TO TOP -->
+    {% include 'bttop.html' %} 
 {% endblock %}

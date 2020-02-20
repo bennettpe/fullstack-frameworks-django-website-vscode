@@ -1,0 +1,12 @@
+{% load static %} 
+
+<!-- Parts Diagram Card -->
+<div class="col-md-6 col-sm-6 p-2">
+    <div class="card">
+        <div class="card-body">
+            <img class="img-fluid part-diagram" data-toggle="magnify" src="{% static gif %}" alt="scparts">
+            <h2 class="parts-diagram-title pt-2">{{ title }}</h2>
+            <p class="card-text text-wrap"> {{ description }} </p>
+        </div>
+    </div>
+</div>

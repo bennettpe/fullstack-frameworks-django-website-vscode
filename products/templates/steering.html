@@ -16,26 +16,17 @@
     <h2 class="pl-4 pr-4"> Steering </h2>
     </br>
 
-    <!-- Parts Diagram(s) -->
-    <div class="row  pl-4 pr-4 justify-content-center text-center">
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/steering and suspension/Steering column - MK3 and MK4, 1500 to February 1977.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Steering column Mk3 & Mk4 </h2>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/steering and suspension/Steering column - 1500 from March 1977.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Steering column 1500 </h2>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram mt-4" data-toggle="magnify" src="{% static 'img/steering and suspension/Steering rack.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Steering rack </h2>
-        </div>
+    <!-- Parts Diagram Cards -->
+    <div class="row parts-container pl-4 pr-4">
+        {% include 'parts_diagram.html' with gif="img/steering and suspension/Steering column - MK3 and MK4, 1500 to February 1977.gif"  title="Steering column Mk3 & Mk4, 1500" description="European models to chassis no. FH100019"  %}
+        {% include 'parts_diagram.html' with gif="img/steering and suspension/Steering column - 1500 from March 1977.gif" title="Steering column 1500" description="European models from chassis no. FH100020" %}
+        {% include 'parts_diagram.html' with gif="img/steering and suspension/Steering rack.gif" title="Steering rack" %}
     </div>
 
     <!-- Parts Cards -->
     {% include 'parts_cards.html' %}
 </div>
 
-<!-- BACK TO TOP -->
-{% include 'bttop.html' %} 
+    <!-- BACK TO TOP -->
+    {% include 'bttop.html' %} 
 {% endblock %}

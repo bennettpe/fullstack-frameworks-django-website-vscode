@@ -19,22 +19,16 @@
     <h2 class="pl-4 pr-4"> Carpets </h2>
     </br>
 
-    <!-- Parts Diagram(s) -->
-    <div class="row  pl-4 pr-4 justify-content-center text-center">
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/interior/Carpet sets.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Carpets </h2>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/interior/Boot trim panels and carpets.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Boot trim & carpets </h2>
-        </div>
+    <!-- Parts Diagram Cards -->
+    <div class="row parts-container pl-4 pr-4">
+        {% include 'parts_diagram.html' with gif="img/interior/Carpet sets.gif"  title="Carpets" %}
+        {% include 'parts_diagram.html' with gif="img/interior/Boot trim panels and carpets.gif" title="Boot trim & carpets" %}
     </div>
 
     <!-- Parts Cards -->
     {% include 'parts_cards.html' %}
 </div>
 
-<!-- BACK TO TOP -->
-{% include 'bttop.html' %} 
+    <!-- BACK TO TOP -->
+    {% include 'bttop.html' %} 
 {% endblock %}

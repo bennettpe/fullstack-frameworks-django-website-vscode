@@ -19,22 +19,16 @@
     <p class="pl-4 pr-4"> From chassis number FD1 to FD92803 (January 1967 to November 1970) - gearbox code: FD. Characteristic: 3 rail type </p>
     </br>
 
-    <!-- Parts Diagram(s) -->
-    <div class="row  pl-4 pr-4 text-center">
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/gearbox/3 syncro gearbox,inner - Mk3.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Gearbox inner Mk3 </h2>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <img class="img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img//gearbox/3 syncro gearbox, outer - Mk3.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Gearbox outer Mk3 </h2>
-        </div>
+    <!-- Parts Diagram Cards -->
+    <div class="row parts-container pl-4 pr-4">
+        {% include 'parts_diagram.html' with gif="img/gearbox/3 syncro gearbox,inner - Mk3.gif"  title="Gearbox inner Mk3 " %}
+        {% include 'parts_diagram.html' with gif="img//gearbox/3 syncro gearbox, outer - Mk3.gif" title="Gearbox outer Mk3" %}
     </div>
 
     <!-- Parts Cards -->
     {% include 'parts_cards.html' %}
 </div>
 
-<!-- BACK TO TOP -->
-{% include 'bttop.html' %} 
+    <!-- BACK TO TOP -->
+    {% include 'bttop.html' %} 
 {% endblock %}

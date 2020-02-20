@@ -14,26 +14,17 @@
     <h2 class="pl-4 pr-4"> Cooling </h2>
     </br>
 
-    <!-- Parts Diagram(s) -->
-    <div class="row  pl-4 pr-4  justify-content-center text-center">
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img//cooling/radiator and radiator hoses.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Radiator & hoses </h2>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <img class="img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/cooling/water pump and fan.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Water pump & fan </h2>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <img class="img-fluid parts-diagram mt-4" data-toggle="magnify" src="{% static 'img/cooling/water pump housing and thermostat.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Water pump housing & thermostat </h2>
-        </div>
+    <!-- Parts Diagram Cards -->
+    <div class="row parts-container pl-4 pr-4">
+        {% include 'parts_diagram.html' with gif="img//cooling/radiator and radiator hoses.gif" title="Radiator & hoses " %}
+        {% include 'parts_diagram.html' with gif="img/cooling/water pump and fan.gif" title="Water pump & fan" %}
+        {% include 'parts_diagram.html' with gif="img/cooling/water pump housing and thermostat.gif" title="Water pump housing & thermostat" %}
     </div>
 
     <!-- Parts Cards -->
     {% include 'parts_cards.html' %}
 </div>
 
-<!-- BACK TO TOP -->
-{% include 'bttop.html' %} 
+    <!-- BACK TO TOP -->
+    {% include 'bttop.html' %} 
 {% endblock %}

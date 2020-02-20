@@ -18,22 +18,16 @@
     <h2 class="pl-4 pr-4"> Brakes Front & Rear </h2>
     </br>
 
-    <!-- Parts Diagram(s) -->
-    <div class="row  pl-4 pr-4 text-center">
-        <div class="col-md-6 col-sm-6">
-            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/brakes/front brakes.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Brakes front </h2>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <img class="img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/brakes/rear brakes.gif' %}" alt="scparts">
-            <h2 class="mb-2"> Brakes rear </h2>
-        </div>
+    <!-- Parts Diagram Cards -->
+    <div class="row parts-container pl-4 pr-4">
+        {% include 'parts_diagram.html' with gif="img/brakes/front brakes.gif"  title="Brakes front " %}
+        {% include 'parts_diagram.html' with gif="img/brakes/rear brakes.gif" title="Brakes rear" %}
     </div>
 
     <!-- Parts Cards -->
     {% include 'parts_cards.html' %}
 </div>
 
-<!-- BACK TO TOP -->
-{% include 'bttop.html' %} 
+    <!-- BACK TO TOP -->
+    {% include 'bttop.html' %} 
 {% endblock %}
