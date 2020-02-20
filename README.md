@@ -3376,6 +3376,56 @@ This has now deployed our app to Heroku.
 * Select new tab, [My Fullstack Frameworks with Django project](https://fullstack-frameworks-project.herokuapp.com/)
 </details>
 
+<details>
+<summary>
+Step 15 -  Changes after completing course
+</summary>
+<p>
+
+#### Refactoring
+1. In the `products` > `templates` there are `*.html` files for creating the `parts diagrams` and `part cards`.  
+   
+2. I refactored the following code  
+   
+   ```html
+   <!-- Parts Diagram(s) -->
+    <div class="row  pl-4 pr-4 justify-content-center text-center">
+        <div class="col-md-6 col-sm-6">
+            <img class=" img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/electrical/Wiper Motor.gif' %}" alt="scparts">
+            <h2 class="mb-2"> Wiper motor </h2>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <img class="img-fluid parts-diagram" data-toggle="magnify" src="{% static 'img/electrical/Windscreen wiper, rack and wheel box.gif' %}" alt="scparts">
+            <h2 class="mb-2"> Wiper rack </h2>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <img class=" img-fluid parts-diagram mt-4" data-toggle="magnify" src="{% static 'img/electrical/Windscreen washer system - vehicles with manual washer pump.gif' %}" alt="scparts">
+            <p class="text-center"> vehicles with manual washer pump. </p>
+            <h2 class="mb-2"> Washer system  </h2>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <img class=" img-fluid parts-diagram mt-4" data-toggle="magnify" src="{% static 'img/electrical/Windscreen washer system - vehicles with electric washer pump.gif' %}" alt="scparts">
+            <p class="text-center"> vehicles with electric washer pump. </p>
+            <h2 class="mb-2"> Washer system </h2>
+        </div>
+    </div>
+   ```
+   To the following using `include with Tag` 
+
+   Note: if you want to include a description add the following to your `include with Tag` line `description="add description here"`
+
+   ```html
+    <!-- Parts Diagram Cards -->
+    <div class="row parts-container pl-4 pr-4">
+        {% include 'parts_diagram.html' with gif="img/electrical/Wiper Motor.gif"  title=" Wiper motor" %}
+        {% include 'parts_diagram.html' with gif="img/electrical/Windscreen wiper, rack and wheel box.gif" title="Wiper rack" %}
+        {% include 'parts_diagram.html' with gif="img/electrical/Windscreen washer system - vehicles with manual washer pump.gif" title="vehicles with manual washer pump" %}
+        {% include 'parts_diagram.html' with gif="img/electrical/Windscreen washer system - vehicles with electric washer pump.gif" title="vehicles with electric washer pump" %}
+    </div>
+   ```
+</details>
+
+
 ### Credits
 
 
