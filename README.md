@@ -3423,6 +3423,27 @@ Step 15 -  Changes after completing course
         {% include 'parts_diagram.html' with gif="img/electrical/Windscreen washer system - vehicles with electric washer pump.gif" title="vehicles with electric washer pump" %}
     </div>
    ```
+
+#### Fix issue with parts diagrams not being the same-size
+1. I had an issue that the parts diagrams gifs where not the same size so when they where displayed some where taller vertically
+   than others which did not look good visually.
+   so recoded the following `parts_diagram_html` to be a card and added `h-100` which seemed to solve the problem. 
+   ```html
+    {% load static %} 
+
+    <!-- Parts Diagram Card -->
+    <div class="col-md-6 col-sm-6 p-2">
+        <div class="card h-100">
+            <div class="card-body">
+                <img class="img-fluid" data-toggle="magnify" src="{% static gif %}" alt="scparts">            
+            </div>
+            <div class="card-footer">
+                <h2 class="parts-diagram-title"> {{ title }} </h2>
+                <p class="parts-diagram-text"> {{ description }} </p>
+            </div>
+        </div>
+    </div>
+   ```
 </details>
 
 
