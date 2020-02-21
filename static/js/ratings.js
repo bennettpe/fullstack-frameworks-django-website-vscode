@@ -1,5 +1,5 @@
-// I would like to thank fellow stident John Longgately (johnL3_alumni on slack) for helping 
-//   me with a solution to making button id's unique per parts card.
+// I would like to thank fellow student John Longgately (johnL3_alumni on slack) for helping 
+// me with a solution to making button id's unique per parts card.
 //
 // DISLIKED BUTTON
 $(".disliked-button").on('click', function(){

@@ -10,7 +10,7 @@
         <div class="card h-100 mb-3 parts-cards">
             <div class="card-body">
                 <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top p-1" alt="scparts">
-                <h3 class="card-title text-center mt2"> <u>{{ product.part_name }}</u> </h3>
+                <h3 class="card-title mt2"> <u>{{ product.part_name }}</u> </h3>
                 <p class="card-text"> <strong> Part no: </strong> {{ product.part_number }} </p>
                 <p class="card-text"> <strong> Model: </strong> {{ product.vehicle_model }} </p>
                 <p class="card-text"> <strong> Required: </strong> {{ product.required }} </p>
@@ -21,7 +21,7 @@
             </div>
             
             <!-- Javascript buttons pass (product.part_number & csrf_token) ---> 
-            <div class="card-footer text-center">
+            <div class="card-footer">
                     <button data-part-number={{ product.part_number }} data-token="{{ csrf_token }}"
                         id ="b-{{forloop.counter}}"
                         class="btn disliked-button" data-toggle="tooltip" title="Vote disliked">

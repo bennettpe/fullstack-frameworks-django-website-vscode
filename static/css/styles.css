@@ -391,11 +391,13 @@ p.card-footer {
 .card-title {
   color: #ee6c4d; 
   font-size: 1.5em;
+  text-align: center;
 }
 
 /* ADD padding for Card footer */
 .card-footer {
   padding: 0.75rem 0.75rem;
+  text-align: center;
 }
 
 /* ADD border for Card footer */
@@ -411,22 +413,21 @@ p.card-footer {
   padding: 0;
 }
 
-/* Add align to parts container */
+/* CENTER Card for parts diagram */
 .parts-container {
-  text-align: center;
-  /*align-items: center;*/
   justify-content: center;
 }
 
 /* CHANGE font size for parts title */
 .parts-diagram-title {
   color: #ee6c4d; 
-  font-size: 1.75em;
+  font-size: 1.5em;
 }
 
-/* Add border to parts diagram */
-.parts-diagram {
-    border-radius: 10px; 
+/* CHANGE Paragraphs for parts diagram text */ 
+p.parts-diagram-text {
+  line-height: 15px;
+  text-align: center;
 }
 
 
