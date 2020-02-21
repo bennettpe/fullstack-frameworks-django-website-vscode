@@ -3428,6 +3428,7 @@ Step 15 -  Changes after completing course
 1. I had an issue that the parts diagrams gifs where not the same size so when they where displayed some where taller vertically
    than others which did not look good visually.
    so recoded the following `parts_diagram_html` to be a card and added `h-100` which seemed to solve the problem. 
+   
    ```html
     {% load static %} 
 
