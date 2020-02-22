@@ -172,24 +172,23 @@ USE_TZ = True
 # AWS_ACCESS_KEY_ID        = Your Amazon Web Services access key
 # AWS_SECRET_ACCESS_KEY    = Your Amazon Web Services secret access key
 # AWS_S3_CUSTOM_DOMAIN     =
+# MEDIA_URL                = URL that handles media servered from MEDIA_ROOT
+# MEDIA_ROOT               = Absolute Path to the directory that will hold user-upload files
 # STATIC_ROOT              = Absolute Path to the directory where collectstatic will collect static files for deployment
 # STATIC_URL               = URL to use when referring to static files located in STATIC ROOT
 # STATICFILES_DIRS         = Look for static files here
 # STATICFILES_STORAGE      = The file storage engine to use when collecting static files with the collectstatic management command.
-# MEDIA_URL                = URL that handles media servered from MEDIA_ROOT
-# MEDIA_ROOT               = Absolute Path to the directory that will hold user-upload files
 
-##If ENV.PY exist use Local Static Files
-if os.path.isfile('env.py'):
-    print("Using Local Static Files")
-    STATIC_URL = '/static/'
-    MEDIA_URL = '/media/' 
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-## If ENV.PY does not exist use AWS S3 Files
+## if env.py exists use Local Static Files
+if os.path.exists('env.py'):
+    print("Using Local Static Files") 
+    MEDIA_URL = '/media/'                                       
+    STATIC_URL = '/static/' 
+    
+## if env.py does not exist use AWS S3 Static Files
 else:
-    print("Using AWS S3 Files")
-    # aws settings
+    print("Using AWS S3 Static Files") 
+    # AWS Settings
     AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
     AWS_STORAGE_BUCKET_NAME = "pauls-fullstack-frameworks-django-vscode-project"
@@ -201,15 +200,16 @@ else:
         'CacheControl': 'max-age=94608000',
     }
 
-    # s3 static file settings
-    STATICFILES_LOCATION = 'static'
-    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
-    STATICFILES_STORAGE = "custom_storages.StaticStorage"
+    # S3 Static File Settings
     MEDIAFILES_LOCATION = 'media'
-    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-   
+    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)  
+    STATICFILES_LOCATION = 'static'                                         
+    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)  
+    STATICFILES_STORAGE = "custom_storages.StaticStorage"
+     
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Controls where Django stores message data
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
