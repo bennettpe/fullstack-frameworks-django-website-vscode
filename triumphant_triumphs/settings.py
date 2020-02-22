@@ -28,9 +28,20 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # A secret key for a particular Django installation
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
+# SECURITY WARNING: don't run with debug turned on in production!
+# A boolean that turns on/off debug mode
+# Used locally and not in Heroku
+if os.path.exists('env.py'):
+    DEBUG = True
+else:  
+    DEBUG = False
+
 
 # A list of strings representing the host/domain names that this Django site can serve
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'fullstack-frameworks-project.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'fullstack-frameworks-django-vscode-project.herokuapp.com']
+
+# To load static files to S3
+#ALLOWED_HOSTS = ['27641ebaf5074751b3a2e3edba1811b2.vfs.cloud9.us-east-1.amazonaws.com']
 
 
 # Application definition
@@ -168,10 +179,9 @@ USE_TZ = True
 # MEDIA_URL                = URL that handles media servered from MEDIA_ROOT
 # MEDIA_ROOT               = Absolute Path to the directory that will hold user-upload files
 
-## If ENV.PY exist use Local Static Files
+##If ENV.PY exist use Local Static Files
 if os.path.isfile('env.py'):
     print("Using Local Static Files")
-    DEBUG = True
     STATIC_URL = '/static/'
     MEDIA_URL = '/media/' 
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -179,13 +189,10 @@ if os.path.isfile('env.py'):
 ## If ENV.PY does not exist use AWS S3 Files
 else:
     print("Using AWS S3 Files")
-    # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = False
-
     # aws settings
     AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-    AWS_STORAGE_BUCKET_NAME = "pauls-fullstack-frameworks-django-project"
+    AWS_STORAGE_BUCKET_NAME = "pauls-fullstack-frameworks-django-vscode-project"
     AWS_DEFAULT_ACL = 'public-read'
     AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
     AWS_S3_REGION_NAME = "eu-west-1"
@@ -193,6 +200,7 @@ else:
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
     }
+
     # s3 static file settings
     STATICFILES_LOCATION = 'static'
     STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
