@@ -184,7 +184,7 @@ if os.path.isfile('env.py'):
     print("Using Local Static Files")
     STATIC_URL = '/static/'
     MEDIA_URL = '/media/' 
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 ## If ENV.PY does not exist use AWS S3 Files
 else:
