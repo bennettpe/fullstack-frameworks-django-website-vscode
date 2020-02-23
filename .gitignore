@@ -3,6 +3,7 @@
 *.png
 credentials.csv
 db.json
+db.vscode.json
 env.py
 venv-requirements.txt
 
