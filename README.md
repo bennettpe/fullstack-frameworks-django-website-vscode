@@ -3,9 +3,9 @@
 # Full Stack Frameworks with Django Milestone 5 Project (VSCode Edition)
 
 ## eCommerce Webshop
-Heroku App: https://fullstack-frameworks-project-vscode.herokuapp.com <br>
-Heroku git: https://git.heroku.com/fullstack-frameworks-project-vscode.git <br>
-GitHub: https://github.com/bennettpe/fullstack-frameworks-django-website-vscode.git <br>
+Heroku App: https://fullstack-frameworks-vscode.herokuapp.com/ <br>
+Heroku git: https://git.heroku.com/fullstack-frameworks-vscode.git <br>
+GitHub: https://git.heroku.com/fullstack-frameworks-vscode.git <br>
 
 This is the milestone project that I have created for the **“Full Stack Frameworks with Django”** module, which is part of  “Full Stack Web Development Course” offered by Code Institute.
 
