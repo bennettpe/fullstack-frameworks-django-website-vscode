@@ -1,1 +1,1 @@
-web: gunicorn triumphant_triumphs.wsgi:application
+web: gunicorn fullstack-frameworks-vscode.wsgi:application 
