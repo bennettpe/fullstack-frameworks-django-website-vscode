@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # Used locally and not in Heroku
 if os.path.exists('env.py'):
     DEBUG = True
-else:  
+else:
     DEBUG = False
 
 
@@ -114,9 +114,10 @@ WSGI_APPLICATION = 'triumphant_triumphs.wsgi.application'
 #---------------------------------------------------------------
 # Check if DATABASE_URL if not use SQLite3
 if "DATABASE_URL" in os.environ:
+    print("Database URL found. Using Postgres Database.")
     DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 else:
-    print("Database URL not found. Using SQLite instead")
+    print("Database URL not found. Using SQLite Database.")
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -142,8 +143,8 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
-     {   
-        'NAME': 'accounts.validators.MaximumLengthValidator', 
+    {
+        'NAME': 'accounts.validators.MaximumLengthValidator',
     },
 ]
 
@@ -181,13 +182,13 @@ USE_TZ = True
 
 ## if env.py exists use Local Static Files
 if os.path.exists('env.py'):
-    print("Using Local Static Files") 
-    MEDIA_URL = '/media/'                                       
-    STATIC_URL = '/static/' 
-    
+    print("Using Local Static File.")
+    MEDIA_URL = '/media/'                            
+    STATIC_URL = '/static/'
+
 ## if env.py does not exist use AWS S3 Static Files
 else:
-    print("Using AWS S3 Static Files") 
+    print("Using AWS S3 Static File.")
     # AWS Settings
     AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
@@ -202,11 +203,11 @@ else:
 
     # S3 Static File Settings
     MEDIAFILES_LOCATION = 'media'
-    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)  
-    STATICFILES_LOCATION = 'static'                                         
-    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)  
+    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+    STATICFILES_LOCATION = 'static'                           
+    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
     STATICFILES_STORAGE = "custom_storages.StaticStorage"
-     
+ 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -224,7 +225,7 @@ MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 # EMAIL_PORT          = Port to use for the SMTP server defined in EMAIL_HOST.
 # EMAIL_BACKEND       = The backend to use for sending emails
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com' 
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 EMAIL_PORT = 587
