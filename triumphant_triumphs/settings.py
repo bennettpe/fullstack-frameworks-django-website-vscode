@@ -38,7 +38,8 @@ else:
 
 
 # A list of strings representing the host/domain names that this Django site can serve
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'fullstack-frameworks-vscode.herokuapp.com']
+ALLOWED_HOSTS = os.environ.get('RENDER_HOSTNAME')
+#ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'fullstack-frameworks-vscode.herokuapp.com']
 
 # To load static files to S3
 #ALLOWED_HOSTS = ['27641ebaf5074751b3a2e3edba1811b2.vfs.cloud9.us-east-1.amazonaws.com']
@@ -183,7 +184,7 @@ USE_TZ = True
 ## if env.py exists use Local Static Files
 if os.path.exists('env.py'):
     print("Using Local Static File.")
-    MEDIA_URL = '/media/'                            
+    MEDIA_URL = '/media/'                         
     STATIC_URL = '/static/'
 
 ## if env.py does not exist use AWS S3 Static Files
