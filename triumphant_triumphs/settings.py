@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 if os.path.exists('env.py'):
     DEBUG = True
 else:
-    DEBUG = False
+    DEBUG = True
 
 # A list of strings representing the host/domain names that this Django site can serve
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
