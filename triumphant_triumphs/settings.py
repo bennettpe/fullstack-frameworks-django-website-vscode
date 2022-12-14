@@ -34,11 +34,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 if os.path.exists('env.py'):
     DEBUG = True
 else:
-    #DEBUG = False
-    DEBUG = True
+    DEBUG = False
 
 # A list of strings representing the host/domain names that this Django site can serve
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
+#ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
 
 # To load static files to S3
 #ALLOWED_HOSTS = ['27641ebaf5074751b3a2e3edba1811b2.vfs.cloud9.us-east-1.amazonaws.com']
