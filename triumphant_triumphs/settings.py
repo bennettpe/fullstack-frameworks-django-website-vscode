@@ -39,11 +39,6 @@ else:
 # A list of strings representing the host/domain names that this Django site can serve
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
 
-# Add Render.com URL to allowed hosts
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-   ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
-
 # To load static files to S3
 #ALLOWED_HOSTS = ['27641ebaf5074751b3a2e3edba1811b2.vfs.cloud9.us-east-1.amazonaws.com']
 
