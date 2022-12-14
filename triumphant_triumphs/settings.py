@@ -37,7 +37,7 @@ if os.path.exists('env.py'):
     ALLOWED_HOSTS =  ['localhost', '127.0.0.1']
 else:
     DEBUG = False
-    ALLOWED_HOSTS = ""
+    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
 
 # To load static files to S3
 #ALLOWED_HOSTS = ['27641ebaf5074751b3a2e3edba1811b2.vfs.cloud9.us-east-1.amazonaws.com']
