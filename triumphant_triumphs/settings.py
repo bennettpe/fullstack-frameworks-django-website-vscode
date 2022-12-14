@@ -37,10 +37,7 @@ if os.path.exists('env.py'):
     ALLOWED_HOSTS =  ['localhost', '127.0.0.1']
 else:
     DEBUG = False
-    ALLOWED_HOSTS = ["*"]
-
-
-#
+    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
 
 # Application definition
 # A list of strings designating all applications that are enabled in this Django installation
