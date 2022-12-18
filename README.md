@@ -2,19 +2,21 @@
 
 # Full Stack Frameworks with Django Milestone 5 Project (VSCode Edition)
 
-## eCommerce Webshop
-Heroku App: https://fullstack-frameworks-vscode.herokuapp.com/ <br>
-Heroku git: https://git.heroku.com/fullstack-frameworks-vscode.git <br>
+## eCommerce  
+
+Render App: https://fullstack-framework-django-website.onrender.com <br>
 GitHub: https://git.heroku.com/fullstack-frameworks-vscode.git <br>
 
 This is the milestone project that I have created for the **“Full Stack Frameworks with Django”** module, which is part of  “Full Stack Web Development Course” offered by Code Institute.
 
 ## Project Brief
+
 This project will be built using knowledge which has been learnt within the "Full Stack Frameworks with Django module" and the other eight previous modules.
 
 For project brief see [Project Brief documentation](static/wireframe/My_Full_Stack_Frameworks_with_Django_Project_Brief.pdf) <br>
 
 ### My Project Overview
+
 A web application for classic car parts , parts for the webshop have been gathered from the following website [**scparts.co.uk**](https://www.scparts.co.uk/sc_en/british-cars/triumph/triumph-spitfire-mkiii-mkiv-and-1500-1967-1980.html)
 
 * The user has a choice to do the following  
@@ -32,12 +34,14 @@ A web application for classic car parts , parts for the webshop have been gather
 
 ## UX  
 
-### Who is this website for ?  
+### Who is this website for ?
+
 * A website that allows users to view and purchase classic car parts.
 
 ### What is it they want to achieve ?
+
 To provide a online eCommerce wbsite that users must be able to do the following
-    
+
 * Add products to use Stripe shopping cart checkout (only if Logged in).
 * Adjust quantity in Shopping cart
 * Add User via registration and authentication processes.
@@ -46,7 +50,8 @@ To provide a online eCommerce wbsite that users must be able to do the following
 * Contact us via contact page
 * Ensure there's a README.md.
 
-### How the project is best way to achieve these things ? 
+### How the project is best way to achieve these things ?
+
 * Create Web Application (Create New Ecommerce multi app Django web application.)
 * Include Ecommerce functionality (Create app(s) to use Stripe (Shopping cart checkout)
 * Include Form validation (Create form(s) to allow users to Create / Edit models in backend)
@@ -61,11 +66,13 @@ To provide a online eCommerce wbsite that users must be able to do the following
 * Deploy Final Version (Use Heroku as hosting platform)
 * Ensure there’s a README.md (A project submitted without a README.md file will FAIL)
 
-### Project Planning & Wireframe Mockup 
+### Project Planning & Wireframe Mockup
+
 For planning see [Planning documentation](static/wireframe/My_Full_Stack_Frameworks_with_Django_Milestone_Project_Planning.pdf) <br>
 For wireframe see [Wireframe documentation](static/wireframe/My_Full_Stack_Frameworks_with_Django_Wireframe.pdf)
 
 ### Database Schema
+
 My SQLite3 (Development) / Postgres (Production) database consists of the following tables
 * accounts_userprofile
 * checkout_order
@@ -76,8 +83,8 @@ My SQLite3 (Development) / Postgres (Production) database consists of the follow
 ![Database schema](static/wireframe/My_Full_Stack_Frameworks_with_Django_Database_Schema_Diagram.jpg)   
 Diagram of website database schema
 
+### Functional Flow
 
-### Functional Flow    
 On the **navbar** there are the following eight icons (**Home**, **About**, **Parts**, **Register**, **Log in**, **Cart**, **Contact**, **Charts**) <br> and on the page there are **Register** and **log in** buttons.    
 Unregistered users can search parts by, clicking on parts which then shows a parts category dropdown. <br>
 The **Register** button allows uses to register username and password.   
@@ -90,13 +97,13 @@ When **logging in** as **admin** a icon is shown on the navbar to access the dja
 Diagram of website functional flow  
 
 ### Technologies
+
 <details>
 <summary>
 Technologies Used in this project 
 </summary>
 <p>
-    
-   
+
 Technologies used in the construction of this project include,  
 * [Badel](https://pypi.org/project/Babel/) is a collection of tools for internationalizing Python applications.
 * [Bootstrap](https://getbootstrap.com/) is a framework for building responsive, mobile-first websites.
@@ -144,7 +151,7 @@ Technologies used in the construction of this project include,
 * [Travis](https://travis-ci.com/) is a hosted continuous integration service used to build and test software projects hosted at GitHub.
 * [Urllib3](https://pypi.org/project/urllib3/) is a HTTP library with thread-safe connection pooling, file post, and more.
 </details>
-    
+
 ## Setting up Project Enviroment
 <details>
 <summary>

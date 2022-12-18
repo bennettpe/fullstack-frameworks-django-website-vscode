@@ -1,8 +1,17 @@
 #!/usr/bin/env python
 import os
 import sys
+import dotenv
+import pathlib
 
 if __name__ == "__main__":
+    #Check if file exists
+    #DOT_ENV_PATH = pathlib.Path() / '.env' 
+    #if DOT_ENV_PATH.exists():
+    #    dotenv.read_dotenv(str(DOT_ENV_PATH))
+    #else:
+    #print("No .env file found, be sure to create it.")
+    dotenv.read_dotenv()
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "triumphant_triumphs.settings")
     try:
         from django.core.management import execute_from_command_line
