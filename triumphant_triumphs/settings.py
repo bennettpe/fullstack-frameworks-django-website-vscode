@@ -29,7 +29,7 @@ DEBUG = str(os.environ.get('DEBUG')) == "1" # 1 == True 0 == False
 # ALLOWED_HOSTS
 #--------------
 # Used locally and not in Render
-if not DEBUG:
+if DEBUG:
     # A list of strings representing the host/domain names that this Django site can serve
     ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS')]
 else:
